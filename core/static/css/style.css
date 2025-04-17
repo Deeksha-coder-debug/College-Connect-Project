@@ -1,0 +1,58 @@
+.hero-section {
+  background-color: #121212; /* dark background */
+  padding: 3rem 0;
+  position: relative;
+}
+
+.floating-shape {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Different shapes floating around */
+.shape1 {
+  top: 10%;
+  left: 20%;
+  background-color: #ffcc00;
+}
+
+.shape2 {
+  bottom: 15%;
+  right: 10%;
+  background-color: #00ccff;
+  animation-delay: 2s;
+}
+
+.shape3 {
+  top: 50%;
+  right: 25%;
+  background-color: #ff66cc;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+      font-size: 2rem;
+  }
+  .hero-section .btn {
+      font-size: 1rem;
+  }
+}

@@ -1,0 +1,85 @@
+<!-- templates/core/home.html -->
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Home | CollegeConnect{% endblock %}
+
+{% block content %}
+  
+<div class="hero-section d-flex align-items-center position-relative overflow-hidden" style="min-height: 80vh;">
+  
+  <!-- Floating circles -->
+  <div class="floating-shape shape1"></div>
+  <div class="floating-shape shape2"></div>
+  <div class="floating-shape shape3"></div>
+
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left image -->
+      <div class="col-md-6 text-center" data-aos="fade-right">
+        <img src="https://www.tempe.gov/home/showpublishedimage/32142/6363902323970300000" 
+             alt="Hero Image" 
+             class="img-fluid rounded shadow" 
+             style="max-height: 60vh;">
+      </div>
+
+      <!-- Right text -->
+      <div class="col-md-6 text-dark text-start" data-aos="fade-left">
+        <h1 class="display-4 fw-bold">Welcome to CollegeConnect 🎓</h1>
+        <p class="lead">One portal. Every need. Your academic life, simplified.</p>
+        <a href="#" class="btn btn-warning btn-lg mt-3">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="text-center p-5 mb-4 bg-light rounded-3" style="background-image: url('https://www.tempe.gov/home/showpublishedimage/32142/6363902323970300000');background-repeat: no-repeat;background-position: left center;background-size: auto 100%;" >
+  <div class="container py-5">
+    <h1 class="display-4 fw-bold">Welcome to CollegeConnect 🎓</h1>
+    <p class="lead">One portal. Every need. Your academic life, simplified.</p>
+    <a href="#" class="btn btn-warning btn-lg mt-3">Get Started</a>
+  </div>
+</div>  -->
+  
+<div class="container text-center mt-5">
+  <h2 class="mb-4">What You Can Do ✨</h2>
+  <div class="row">
+    <div class="col-md-4" data-aos="fade-right" data-aos-delay="200">
+      <div class="card shadow-sm">
+        <!-- <div class="card-body"> -->
+        <div class="card-body" >
+
+          <h5 class="card-title">📚 Study Materials</h5>
+          <p class="card-text">Access notes & PDFs shared by faculty.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-left" data-aos-delay="200">
+      <div class="card shadow-sm">
+        <!-- <div class="card-body"> -->
+        <div class="card-body">
+
+          <h5 class="card-title">🕒 Attendance Tracker</h5>
+          <p class="card-text">Check your attendance anytime, anywhere.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="card shadow-sm">
+        <!-- <div class="card-body"> -->
+        <div class="card-body">
+
+          <h5 class="card-title">📆 Events & Notices</h5>
+          <p class="card-text">Stay updated with college events and news.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-5 text-center">
+  <p class="text-muted">Made with ❤️ by MCA students for MCA students.</p>
+</div>
+{% endblock %}
