@@ -1,5 +1,5 @@
 <!-- templates/core/home.html -->
-{% extends 'base/base.html' %}
+{% extends 'core/base.html' %}
 {% load static %}
 {% block title %}Home | CollegeConnect{% endblock %}
 
@@ -27,7 +27,7 @@
       <div class="col-md-6 text-dark text-start" data-aos="fade-left">
         <h1 class="display-4 fw-bold">Welcome to CollegeConnect 🎓</h1>
         <p class="lead">One portal. Every need. Your academic life, simplified.</p>
-        <a href="#" class="btn btn-warning btn-lg mt-3">Get Started</a>
+        <a href="{% url 'login' %}" class="btn btn-warning btn-lg mt-3">Get Started</a>
       </div>
 
     </div>
