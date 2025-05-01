@@ -27,7 +27,7 @@ mt-5 adds top margin. -->
           <div class="card-body">
             <h5 class="card-title">📚 Study Materials</h5>
             <p class="card-text">You have {{ materials_count }} notes saved.</p>
-            <a href="#" class="btn btn-outline-primary btn-sm">View Materials</a>
+            <a href="{% url 'materials' %}" class="btn btn-outline-primary btn-sm">View Materials</a>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ mt-5 adds top margin. -->
           <div class="card-body">
             <h5 class="card-title">🕒 Attendance</h5>
             <p class="card-text">{{ attendance_percent }}% this semester!</p>
-            <a href="#" class="btn btn-outline-success btn-sm">Check Details</a>
+            <a href="{% url 'attendance' %}" class="btn btn-outline-success btn-sm">Check Details</a>
           </div>
         </div>
       </div>
@@ -49,11 +49,31 @@ mt-5 adds top margin. -->
           <div class="card-body">
             <h5 class="card-title">📆 Events</h5>
             <p class="card-text">{{ upcoming_events }} upcoming events.</p>
-            <a href="#" class="btn btn-outline-warning btn-sm">See Events</a>
+            <a href="{% url 'events' %}" class="btn btn-outline-warning btn-sm">See Events</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Announcements Section -->
+<div class="mt-5" data-aos="fade-up">
+  <h3 class="fw-bold mb-3">📢 Latest Announcements</h3>
+
+  {% for announce in announcements %}
+  <div class="alert alert-info shadow-sm" role="alert">
+    <h5 class="mb-1">{{ announce.title }}</h5>
+    <small class="text-muted">{{ announce.date_posted|date:"d M Y, H:i" }}</small>
+    <p class="mb-0">{{ announce.content }}</p>
+  </div>
+  {% empty %}
+  <p class="text-muted">No announcements at the moment.</p>
+  {% endfor %}
+</div>
+
+<!-- See all link -->
+    <div class="text-end mt-2">
+      <a href="{% url 'announcements' %}" class="btn btn-link">See all announcements ➔</a>
+    </div>
   {% endblock %}
   <!-- End the block so it goes back to base layout. -->

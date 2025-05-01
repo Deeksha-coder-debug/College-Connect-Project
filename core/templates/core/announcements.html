@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% block title %}Announcements{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="mb-4">📢 Latest Announcements</h1>
+
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action">
+      📚 New study materials added for DSA!
+      <small class="text-muted d-block">Posted 2 days ago</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+      🕒 Mid-semester attendance submission by next week.
+      <small class="text-muted d-block">Posted 5 days ago</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+      🎉 TechFest registrations are open now!
+      <small class="text-muted d-block">Posted 1 week ago</small>
+    </a>
+  </div>
+</div>
+{% endblock %}
