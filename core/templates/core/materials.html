@@ -2,30 +2,56 @@
 
 {% block content %}
 <div class="container mt-5">
-  
-  <!-- Page Heading -->
+
+  <!-- 🔥 Page Heading -->
   <div class="text-center mb-5" data-aos="fade-down">
     <h1 class="fw-bold">📚 Your Study Materials</h1>
     <p class="text-muted">Upload and manage your notes like a topper! 🏅</p>
   </div>
 
-  <!-- Upload Form -->
+  <!-- 🔎 Search + Category Filter -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+
+    <!-- Category Filter -->
+    <form method="get" class="d-flex">
+      <select name="category" onchange="this.form.submit()" class="form-select me-2">
+        <option value="">All Categories</option>
+        <option value="Math">Math</option>
+        <option value="Science">Science</option>
+        <option value="History">History</option>
+        <option value="Language">Language</option>
+        <option value="Other">Other</option>
+      </select>
+    </form>
+
+    <!-- Search Box -->
+    <form method="get" class="d-flex">
+      <input type="text" name="q" class="form-control me-2" placeholder="Search materials...">
+      <button type="submit" class="btn btn-outline-primary">Search</button>
+    </form>
+
+  </div>
+
+  <!-- ⬆️ Upload Form -->
   <div class="card p-4 shadow-sm mb-5" data-aos="fade-up">
     <h4>Upload New Material</h4>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ form.as_p }}
+      <div class="mb-3">
+        {{ form.title.label_tag }} {{ form.title }}
+      </div>
+      <div class="mb-3">
+        {{ form.file.label_tag }} {{ form.file }}
+      </div>
+      <div class="mb-3">
+        {{ form.category.label_tag }} {{ form.category }}
+      </div>
       <button type="submit" class="btn btn-primary mt-2">Upload 📤</button>
     </form>
   </div>
 
-  <!-- Existing Materials -->
+  <!-- 📄 Materials List -->
   <div class="row">
-    <ul class="list-group">
-        <li class="list-group-item">Operating Systems Notes.pdf</li>
-        <li class="list-group-item">DBMS Cheat Sheet.docx</li>
-        <li class="list-group-item">DSA Important Questions.pdf</li>
-      </ul>
     {% for material in materials %}
     <div class="col-md-4 mb-4" data-aos="zoom-in">
       <div class="card shadow-sm border-0 h-100">
@@ -36,7 +62,6 @@
         </div>
       </div>
     </div>
-    
     {% empty %}
     <p class="text-center">😶 No materials uploaded yet. Be the first to shine!</p>
     {% endfor %}
@@ -44,7 +69,3 @@
 
 </div>
 {% endblock %}
-
-
-
-
